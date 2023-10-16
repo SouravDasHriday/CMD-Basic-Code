@@ -1,0 +1,52 @@
+
+DISKPART> list disk
+
+  Disk ###  Status         Size     Free     Dyn  Gpt
+  --------  -------------  -------  -------  ---  ---
+  Disk 0    Online           60 GB  1024 KB        *
+  Disk 1    Online           20 GB    20 GB
+
+DISKPART> select disk 1
+
+Disk 1 is now the selected disk.
+
+DISKPART> create partition primary size=1024
+DISKPART> format fs=ntfs quick
+DISKPART> assign letter =a
+
+
+DISKPART> list disk
+
+  Disk ###  Status         Size     Free     Dyn  Gpt
+  --------  -------------  -------  -------  ---  ---
+  Disk 0    Online           60 GB  1024 KB        *
+* Disk 1    Online           20 GB    18 GB
+
+DISKPART> list partition
+
+  Partition ###  Type              Size     Offset
+  -------------  ----------------  -------  -------
+* Partition 1    Primary           1024 MB  1024 KB
+
+
+DISKPART> create partition extended size=18432
+DISKPART> format fs=ntfs quick
+
+DISKPART> list partition
+
+  Partition ###  Type              Size     Offset
+  -------------  ----------------  -------  -------
+  Partition 1    Primary           1024 MB  1024 KB
+* Partition 0    Extended            18 GB  1025 MB
+
+
+  Partition ###  Type              Size     Offset
+  -------------  ----------------  -------  -------
+  Partition 1    Primary           1024 MB  1024 KB
+  Partition 0    Extended            18 GB  1025 MB
+  Partition 2    Logical           6114 MB  1026 MB
+* Partition 3    Logical           6114 MB  7141 MB
+
+DISKPART> create partition logical size=6114
+DISKPART> format fs=ntfs quick
+DISKPART> assign letter =m

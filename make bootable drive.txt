@@ -1,0 +1,8 @@
+***
+{mount image & drive is G:
+Copy into E:}
+*****
+C:Windowssystem32> G:
+G:\> cd boot
+G:\boot> bootsect.exe /nt60 E:
+G:\> xcopy g:\*.* e:\ /E /H /F

@@ -1,0 +1,84 @@
+
+C:\Windows\system32>net user
+
+User accounts for \\DESKTOP-43JUHLA
+
+-------------------------------------------------------------------------------
+Administrator            DefaultAccount           Guest
+SD                       user_1                   user_2
+WDAGUtilityAccount
+The command completed successfully.
+
+
+C:\Windows\system32>net user user_1 delete
+The command completed successfully.
+
+
+C:\Windows\system32>net user
+
+User accounts for \\DESKTOP-43JUHLA
+
+-------------------------------------------------------------------------------
+Administrator            DefaultAccount           Guest
+SD                       user_1                   user_2
+WDAGUtilityAccount
+The command completed successfully.
+
+
+C:\Windows\system32>net user user_1 /delete
+The command completed successfully.
+
+
+C:\Windows\system32>net user
+
+User accounts for \\DESKTOP-43JUHLA
+
+-------------------------------------------------------------------------------
+Administrator            DefaultAccount           Guest
+SD                       user_2                   WDAGUtilityAccount
+The command completed successfully.
+
+
+C:\Windows\system32>net user user_2 /delete
+The command completed successfully.
+
+
+C:\Windows\system32>net user
+
+User accounts for \\DESKTOP-43JUHLA
+
+-------------------------------------------------------------------------------
+Administrator            DefaultAccount           Guest
+SD                       WDAGUtilityAccount
+The command completed successfully.
+
+
+C:\Windows\system32>net user user_1 /add
+The command completed successfully.
+
+
+C:\Windows\system32>net user user_2 /add
+The command completed successfully.
+
+
+C:\Windows\system32>net user user_2 123
+The command completed successfully.
+
+
+C:\Windows\system32>net localgroup administrators user_1 /add
+The command completed successfully.
+
+
+C:\Windows\system32>net localgroup administrators user_1 /delete
+The command completed successfully.
+
+
+C:\Windows\system32>net user
+
+User accounts for \\DESKTOP-43JUHLA
+
+-------------------------------------------------------------------------------
+Administrator            DefaultAccount           Guest
+SD                       user_1                   user_2
+WDAGUtilityAccount
+The command completed successfully.

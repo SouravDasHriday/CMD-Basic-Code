@@ -1,0 +1,6 @@
+ipconfig/all
+ipconfig/flushdns
+ipconfig/release
+ipconfig/release6
+ipconfig/renew
+doskey /history > F:\command_history.txt
